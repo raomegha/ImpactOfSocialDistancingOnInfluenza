@@ -1,0 +1,63 @@
+---
+title: "Assignment 25"
+author: "Megha, Duncan, Michelle, Siddharth"
+output: html_document
+---
+
+## Libraries
+
+```{r}
+# Libraries
+library(ggplot2)
+library(dplyr)
+
+```
+
+## Set data
+```{r}
+# Load dataset from csv
+
+setwd("~/Desktop/Assignment25") #set working directory
+
+df <- read.csv(file = 'corona.csv') #read csv and store in dataframe
+
+# Changing Year and Month columns as factors
+df$Year <- as.factor(df$Year)
+df$Month <- as.factor(df$Month)
+
+# Calling the dataframe
+df
+```
+
+## Visualization
+
+```{r}
+# Reordering months so they are NOT alphabetical
+df$Month <- factor(df$Month,levels = c("Jan", "Feb", "Mar", "Apr", "May"))
+
+# Final Visualization
+finalVis <- ggplot(data = df, aes(Month, NumberOfCases, colour = Year, group = Year) ) + 
+  geom_line(show.legend = FALSE) + 
+  geom_vline(xintercept=c("Feb"), linetype="dotted") + #dotted line through Jan 31, to show when covid was declared emergency
+  geom_point(show.legend = FALSE) + 
+  scale_y_continuous(limits = c(0, 35000), breaks = seq(0, 35000, by = 2500)) +
+  labs(y= "Number of Cases", 
+       title = "Labaratory-Confirmed Influenza Cases Reduced",
+       subtitle = "due to emphasis of social distancing and good hygiene amid COVID-19") +
+  scale_color_manual(values=c('#999999','#0051ff')) + #changes colors of lines
+  theme_bw() +
+  theme(panel.grid.major = element_blank(), # removing grid lines
+        panel.grid.minor = element_blank(), 
+        plot.caption = element_text(color = '#999999'),
+        plot.subtitle = element_text(color = '#999999')) + 
+  geom_text(data = df[ which(df$Month=='Mar' | df$Month=='Apr' | df$Month=='May'),], #only show data labels for these months
+            aes(label = NumberOfCases), vjust = -1.25, show_guide = FALSE) +
+  annotate("label", x = 5.3, y = 30657, label = "2019", color = '#999999') + 
+  annotate("label", x = 5.3, y = 208, label = "2020", color = '#0051ff') + 
+  annotate("label", x = 2, y = 30000, label = "US Department of Health \nand Human Services declare \nCOVID-19 as a public health \nemergency on January 31, 2020", color = '#999999')
+
+# Calling the Final Visualization
+finalVis
+
+```
+
