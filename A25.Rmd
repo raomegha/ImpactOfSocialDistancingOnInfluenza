@@ -21,7 +21,7 @@ Importing data from existing csv
 
 setwd("~/Desktop/Assignment25") #set working directory
 
-df <- read.csv(file = 'corona.csv') #read csv and store in dataframe
+df <- read.csv(file = 'fluNumbers.csv') #read csv and store in dataframe
 
 # Changing Year and Month columns as factors
 df$Year <- as.factor(df$Year)
