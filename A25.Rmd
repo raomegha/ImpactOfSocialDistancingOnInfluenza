@@ -1,10 +1,10 @@
 ---
 title: "Assignment 25"
-author: "Megha, Duncan, Michelle, Siddharth"
+author: "Megha Rao"
 output: html_document
 ---
 
-## Libraries
+## Importing Libraries
 
 ```{r}
 # Libraries
@@ -14,6 +14,8 @@ library(dplyr)
 ```
 
 ## Set data
+Importing data from existing csv
+
 ```{r}
 # Load dataset from csv
 
