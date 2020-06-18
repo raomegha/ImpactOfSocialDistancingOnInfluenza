@@ -1,4 +1,4 @@
-There were only 208 laboratory-confirmed cases of influenza nationwide in the month of April 2020 – compared to 30,567 at 
+There were only 208 laboratory-confirmed cases of influenza nationwide in the month of May 2020 – compared to 30,567 at 
 the same time in 2019.
 
 I wanted to see if social distancing due to COVID-19 had a significant impact on these numbers. As a result, this study was done. 
