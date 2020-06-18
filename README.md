@@ -5,7 +5,7 @@ I wanted to see if social distancing due to COVID-19 had a significant impact on
 
 After collecting some numbers from the Australian National Notifiable Diseases Surveillance System, I created a visualization 
 in R using ggplot2. 
-The visualization is a connected scatterplot, showing numbers from 2019, 2020 during the flu season (Jan - May). Take a look at 
+The visualization is a connected scatterplot, showing numbers from 2019 - 2020 during the flu season (Jan - May). Take a look at 
 Rmd file to see how this was done! 
 
 <img src = "flu.png">
